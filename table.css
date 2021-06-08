@@ -1,0 +1,35 @@
+body {
+    background-color: #21094e;
+}
+
+table {    
+    color: #ecdbba;
+    border: 2px solid #c84b31;    
+    font-size: 20px;
+    text-align: center;
+    background-color: #c84b31;
+    border-radius: 5px; 
+}
+
+table tr td, table tr th {
+    padding: 10px;    
+}
+
+table tr:nth-child(3) {
+    background-color: #161616;
+}
+
+table tr:first-child {
+    background-color: #161616;    
+}
+
+table tr:last-child {
+    background-color: #346751;    
+}
+
+
+table tr {
+    background-color: #346751;
+}
+
+
