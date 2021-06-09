@@ -54,33 +54,49 @@ const users = [
     },
 ]
 
-let array = [];
-for(let i = 0; i < users.length; i++ ) {
-    let search3 = users[i].email;
-    const search2 = search3.indexOf("@academlo.com");
-    const exist = search2 >= 0;
-    let searchName = users[i].name;
-    let searchEmail = users[i].email;
-    let searchAge = users[i].age;
-    let searchGender = users[i].gender;
-    let searchSocialFacebook = users[i].social[0].url;
-    let searchSocialTwitter = users[i].social[1].url;        
-        if(exist === true) {
-            //console.log(searchName,searchEmail,searchAge,searchGender);
-            array.push(searchName,searchEmail,searchAge,searchGender,searchSocialFacebook,searchSocialTwitter);
-        }
+// let array = [];
+// for(let i = 0; i < users.length; i++ ) {
+//     let search3 = users[i].email;
+//     const search2 = search3.indexOf("@academlo.com");
+//     const exist = search2 >= 0;
+//     let searchName = users[i].name;
+//     let searchEmail = users[i].email;
+//     let searchAge = users[i].age;
+//     let searchGender = users[i].gender;
+//     let searchSocialFacebook = users[i].social[0].url;
+//     let searchSocialTwitter = users[i].social[1].url;        
+//         if(exist === true) {
+//             //console.log(searchName,searchEmail,searchAge,searchGender);
+//             array.push(searchName,searchEmail,searchAge,searchGender,searchSocialFacebook,searchSocialTwitter);
+//         }
 
-}
+// }
 
-console.log(array);//Tengo todos los valores requeridos. Nombre, email, edad, sexo.
-console.log(array[0]); //Me dara Erik nombre
-console.log(array[1]); //Me dara Erik email
-console.log(array[2]); //Me dara Erik edad
-console.log(array[3]); //Me dara Erik sexo
-console.log(array[4]); //Me dara Erik facebook
-console.log(array[5]); //Me dara Erik twitter
+// console.log(array);//Tengo todos los valores requeridos. Nombre, email, edad, sexo.
+// console.log(array[0]); //Me dara Erik nombre
+// console.log(array[1]); //Me dara Erik email
+// console.log(array[2]); //Me dara Erik edad
+// console.log(array[3]); //Me dara Erik sexo
+// console.log(array[4]); //Me dara Erik facebook
+// console.log(array[5]); //Me dara Erik twitter
 
 // 6 valores para cada usuario   0-5 Erik   6-11 Georg     12-17 Oscar 
+
+let array = [];
+users.forEach((elemets,index) => {   
+
+    if(elemets.email.endsWith("@academlo.com")) {      
+        array.push(elemets.name,elemets.email,elemets.age,elemets.gender)
+    }
+    elemets.social.forEach((redesSociales) => { 
+        
+        if(elemets.email.endsWith("@academlo.com")) {       
+            array.push(redesSociales.url);    
+        }
+        
+    });
+    
+});
 
 let containerBody = document.getElementById("container-body")//Enlace Body 
 let containerTable = document.createElement("table");//Creacion de tabla
